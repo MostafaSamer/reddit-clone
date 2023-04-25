@@ -3,7 +3,10 @@
         <div class="col-12 pt-3 pb-3 mb-4 border-bottom">
             <div class="float-end">
                 <% if account_signed_in? %>
-                    <%= link_to "Sign Out", destroy_account_session_path, method: :delete, class: "btn btn-outline-primary" %>
+                    <%= current_account.full_name %>
+                    <%= link_to "Profile", "", class: "dropdown-item" %>
+                    <%= link_to "Settings", edit_account_registration_path, class: "dropdown-item" %>
+                    <%= link_to "Sign Out", destroy_account_session_path, method: :delete, class: "dropdown-item" %>
                 <% else %>
                     <%= link_to "Log In", new_account_session_path, class: "btn btn-outline-primary" %>
                     <%= link_to "Sign up", new_account_registration_path, class: "btn btn-primary" %>
